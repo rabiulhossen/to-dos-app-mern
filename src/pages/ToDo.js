@@ -7,7 +7,7 @@ export default function ToDo() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/add")
+    fetch("https://secret-ridge-55956.herokuapp.com/add")
       .then((res) => res.json())
       .then((data) => {
         setTasks(data);
@@ -15,7 +15,7 @@ export default function ToDo() {
   }, []);
 
   const handleCompletedTask = (_id) => {
-    fetch(`http://localhost:5000/add/${_id}`, {
+    fetch(`https://secret-ridge-55956.herokuapp.com/add/${_id}`, {
       method: "put",
       headers: {
         "content-type": "application/json",
@@ -28,7 +28,7 @@ export default function ToDo() {
   const handleUpdateData = (e, id) => {
     e.preventDefault();
     const updatedTask = e.target.updatedTask.value;
-    fetch(`http://localhost:5000/add/${id}`, {
+    fetch(`https://secret-ridge-55956.herokuapp.com/add/${id}`, {
       method: "put",
       headers: {
         "content-type": "application/json",

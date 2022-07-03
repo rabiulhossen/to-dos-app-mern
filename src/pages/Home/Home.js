@@ -11,7 +11,7 @@ export default function Home() {
          e.preventDefault()
          const inputValue = e.target.task.value
 alert('added! click To do')
-         fetch('http://localhost:5000/add', {
+         fetch('https://secret-ridge-55956.herokuapp.com/add', {
           method: 'POST',
           headers: {
               'content-type': 'application/json'
@@ -23,7 +23,7 @@ alert('added! click To do')
 
      }
      useEffect(() => {
-          fetch('http://localhost:5000/add')
+          fetch('https://secret-ridge-55956.herokuapp.com/add')
               .then(res => res.json())
               .then(data => {
                   setTasks(data)
